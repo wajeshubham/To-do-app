@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row mt-4">
+    <div class="col">
+        <h2>Add item</h2>
+    </div>
+</div>
+
+<form class="form-inline" action="{% url 'new_event' %}" method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" id="validationTooltip05" name="event" placeholder="type here..."
+                   required>
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </div>
+</form>
+
+<div class="row mt-4">
+    <div class="col">
+        <ul class="list-group">
+            {% for events in new_events %}
+            <li class="list-group-item">{{events}}</a>
+                <div class="float-right">
+                    <form action="delete_event/{{events.id}}/" method="post">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock content %}
