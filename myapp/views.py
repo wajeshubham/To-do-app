@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
-
+import os
 from myapp.models import ToDo
 
 
@@ -29,4 +29,5 @@ def new_event(request):
 @csrf_exempt
 def delete_event(request, todo_id):
     ToDo.objects.get(id=todo_id).delete()
-    return HttpResponseRedirect("/")  # it will redirect the response to given url
+    # it will redirect the response to given url
+    return HttpResponseRedirect("/")
