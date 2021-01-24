@@ -31,7 +31,7 @@ SECRET_KEY = 'q_vlmue%-vllixqjmftg!(!99ny5u++5qq$=kycly!)57ya-dd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['djangotodo-list.herokuapp.com']
 
 # Application definition
 
